@@ -374,20 +374,6 @@ public class Calculator {
         });
         btnEqual.setSize(2 * BUTTON_WIDTH + 10, BUTTON_HEIGHT);
 
-        btnRoot = initBtn("√", x[4], y[1], event -> {
-            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
-                if (go) {
-                    val = Math.sqrt(Double.parseDouble(inText.getText()));
-                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
-                        inText.setText(String.valueOf((int) val));
-                    } else {
-                        inText.setText(String.valueOf(val));
-                    }
-                    opt = '√';
-                    addWrite = false;
-                }
-        });
-        btnRoot.setVisible(false);
 
         btnPower = initBtn("pow", x[4], y[2], event -> {
             repaintFont();
@@ -486,13 +472,11 @@ public class Calculator {
         switch (selectedItem) {
             case "Standard":
                 window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-                btnRoot.setVisible(false);
                 btnPower.setVisible(false);
                 btnLog.setVisible(false);
                 break;
             case "Scientific":
                 window.setSize(WINDOW_WIDTH + 80, WINDOW_HEIGHT);
-                btnRoot.setVisible(true);
                 btnPower.setVisible(true);
                 btnLog.setVisible(true);
                 break;
@@ -513,7 +497,7 @@ public class Calculator {
                 btnMul.setBackground(null);
                 btnSub.setBackground(null);
                 btnAdd.setBackground(null);
-                btnRoot.setBackground(null);
+              
                 btnLog.setBackground(null);
                 btnPower.setBackground(null);
                 btnEqual.setBackground(null);
@@ -539,7 +523,7 @@ public class Calculator {
                 btnEqual.setForeground(Color.BLACK);
                 btnLog.setForeground(Color.BLACK);
                 btnPower.setForeground(Color.BLACK);
-                btnRoot.setForeground(Color.BLACK);
+               
                 break;
             case "Colored":
                 window.getContentPane().setBackground(null);
@@ -550,7 +534,7 @@ public class Calculator {
                 btnMul.setBackground(Color.PINK);
                 btnSub.setBackground(Color.PINK);
                 btnAdd.setBackground(Color.PINK);
-                btnRoot.setBackground(Color.PINK);
+               
                 btnLog.setBackground(Color.PINK);
                 btnPower.setBackground(Color.PINK);
                 btnEqual.setBackground(Color.BLUE);
@@ -576,7 +560,7 @@ public class Calculator {
                 btnEqual.setForeground(Color.WHITE);
                 btnLog.setForeground(Color.WHITE);
                 btnPower.setForeground(Color.WHITE);
-                btnRoot.setForeground(Color.WHITE);
+            
                 break;
             case "DarkTheme":
                 final Color primaryDarkColor = new Color(141, 38, 99);
@@ -605,7 +589,7 @@ public class Calculator {
                 btnEqual.setForeground(secondaryDarkColor);
                 btnLog.setForeground(secondaryDarkColor);
                 btnPower.setForeground(secondaryDarkColor);
-                btnRoot.setForeground(secondaryDarkColor);
+         
                 btnC.setBackground(primaryDarkColor);
                 btnBack.setBackground(primaryDarkColor);
                 btnMod.setBackground(primaryDarkColor);
@@ -613,7 +597,7 @@ public class Calculator {
                 btnMul.setBackground(primaryDarkColor);
                 btnSub.setBackground(primaryDarkColor);
                 btnAdd.setBackground(primaryDarkColor);
-                btnRoot.setBackground(primaryDarkColor);
+              
                 btnLog.setBackground(primaryDarkColor);
                 btnPower.setBackground(primaryDarkColor);
                 btnEqual.setBackground(primaryDarkColor);
